@@ -2,8 +2,8 @@
 Auf Github wird dieser Code leider nicht funktionieren, da das Terminal auf Github auf Linux basiert, der Code aber unter
 Windows geschrieben wurde und 2 Windows Librarys enthält (#include conio.h / #include windows.h) die hier auch als Fehler
 angezeigt werden, aber für die Funktionalität unbedingt notwendig sind! Des Weiteren enthält er Textfärbungen (z.B.: \033[94m
-oder \033[0m) die nur bedingt bis garnicht in einer Linux Derivat - Shell funktionieren! Das Spiel ist auch noch "far from 
-finish" und muss wohl bei verschiedenen Optionen mit 'ctrl + c' unterbrochen werden! Benutzung auf eigene Gefahr! ;)
+oder \033[0m) die nur bedingt bis gar nicht in einer Linux-Derivat - Shell funktionieren! Das Spiel ist auch noch "far from 
+finish" und muss wohl an mancher Stelle mit 'ctrl + c' unterbrochen werden! Benutzung auf eigene Gefahr! ;)
 Ansonsten HF! 
 
 Gruß Zongamin*/
@@ -83,7 +83,7 @@ int zufall(int min, int max)
 
 // Zuweisung aller Charakterwerte
 
-void Zuweisung()
+void zuweisung()
 {
     SpielerName[1] = "Hans Wurst";
     SpielerName[2] = "Napalm Norbert";
@@ -1709,7 +1709,7 @@ int main ()
     cout << "\t\\_____/ \\__,_||_| |_| |_| \\___||___/\033[0m\n";
     
     GetKey();       
-    Zuweisung();
+    zuweisung();
     Hauptmenue();
     bool Running = true;
     while(Running)
