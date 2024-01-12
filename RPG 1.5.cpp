@@ -1,3 +1,15 @@
+/* Hallo an alle, die diese Repository testen und/oder forken möchten eine kurze aber wichtige Info:
+Auf Github wird dieser Code leider nicht funktionieren, da das Terminal auf Github auf Linux basiert, der Code aber unter
+Windows geschrieben wurde und 2 Windows Librarys enthält (#include conio.h / #include windows.h) die hier auch als Fehler
+angezeigt werden, aber für die Funktionalität unbedingt notwendig sind! Des Weiteren enthält er Textfärbungen (z.B.: \033[94m
+oder \033[0m) die nur bedingt bis garnicht in einer Linux Derivat - Shell funktionieren! Das Spiel ist auch noch "far from 
+finish" und muss wohl bei verschiedenen Optionen mit 'ctrl + c' unterbrochen werden! Benutzung auf eigene Gefahr! ;)
+Ansonsten HF! 
+
+Gruß Zongamin*/
+
+
+
 #include <iostream>
 #include <conio.h>
 #include <string>
@@ -62,7 +74,7 @@ string GegnerName = "Gegner";
 
 // Zufall Min/Max errechnen
 
-int Zufall(int min, int max)
+int zufall(int min, int max)
 {
     srand(static_cast<unsigned int>(time(nullptr)));
     int ZufallsZahl = rand() % (max - min + 1) + min;
@@ -599,9 +611,9 @@ void Falle (int Gefahr)
 {
     if (Gefahr == 1) {Trap[RundenManager] = 0; return;} 
     
-    if (Gefahr == 2) {int Fallus = Zufall(1,100); if (Fallus < 38 && Fallus > 63) {Trap[RundenManager] = 1; return;} else {Trap[RundenManager] = 0; return;}}
+    if (Gefahr == 2) {int Fallus = zufall(1,100); if (Fallus < 38 && Fallus > 63) {Trap[RundenManager] = 1; return;} else {Trap[RundenManager] = 0; return;}}
 
-    if (Gefahr == 3) {int Fallus = Zufall(1,100); if (Fallus > 0 & Fallus < 26 || Fallus > 50 & Fallus < 76) {Trap[RundenManager] = 1; return;} else {return;}}
+    if (Gefahr == 3) {int Fallus = zufall(1,100); if (Fallus > 0 & Fallus < 26 || Fallus > 50 & Fallus < 76) {Trap[RundenManager] = 1; return;} else {return;}}
 }
 
 // Falle auslösen
@@ -612,7 +624,7 @@ void TrapTap()
     
     double DMG = Gesundheit[RundenManager] / 25;
     double Schaden = round(DMG);
-    DMG = 0; DMG = Zufall(10, Schaden);
+    DMG = 0; DMG = zufall(10, Schaden);
     TatsaechlicheGesundheit[RundenManager] = TatsaechlicheGesundheit[RundenManager] - DMG;
     Trap[RundenManager] = Trap[RundenManager] - 1;
 
@@ -697,7 +709,7 @@ void Find()
     int Manat = 0;
     int Regent = 0;
     int Metall = 0;
-    int Chance = Zufall(1,100);
+    int Chance = zufall(1,100);
     int xp = 0;
     int px = 0;
 
@@ -705,7 +717,7 @@ void Find()
 
     if (Chance > 0 & Chance < 26 || Chance > 49 & Chance < 76) 
     {
-        FindGold = Zufall((SpielerLevel[RundenManager] * 5), (SpielerLevel[RundenManager] * 25));
+        FindGold = zufall((SpielerLevel[RundenManager] * 5), (SpielerLevel[RundenManager] * 25));
         Erfahrung = FindGold * 0.25;
         xp = round(Erfahrung);
         px = px + xp;
@@ -715,7 +727,7 @@ void Find()
     }
     if (Schluessel[RundenManager] < 1)
     {
-        Chance = 0; Chance = Zufall(1,100);
+        Chance = 0; Chance = zufall(1,100);
         if (Chance > 0 & Chance < 26 || Chance > 49 & Chance < 76)
         {
             xp = 0;
@@ -727,48 +739,48 @@ void Find()
             Schluessel[RundenManager] = Schluessel[RundenManager] + 1;
         } 
     }
-    Chance = 0; Chance = Zufall(1,100);
+    Chance = 0; Chance = zufall(1,100);
     if (Chance > 0 & Chance < 26 || Chance < 49 & Chance < 76)
     {
         xp = 0;
         Erfahrung = 0;
-        Heal = Zufall(1, 3);
+        Heal = zufall(1, 3);
         Erfahrung = (Heal * 10) * (SpielerLevel[RundenManager] * 0.25);
         xp = round(Erfahrung);
         px = px + xp;
         cout << "\n\033[31mHeiltraenke ------------> " << Heal << "\033[0m (" << xp << " EXP)";
         Heiltrank[RundenManager] = Heiltrank[RundenManager] + Heal;
     }
-    Chance = 0; Chance = Zufall(1,100);
+    Chance = 0; Chance = zufall(1,100);
     if (Chance > 0 & Chance < 26 || Chance < 49 & Chance < 76)
     {
         xp = 0;
         Erfahrung = 0;
-        Manat = Zufall(1, 3);
+        Manat = zufall(1, 3);
         Erfahrung = (Manat * 15) * (SpielerLevel[RundenManager] * 0.25);
         xp = round(Erfahrung);
         px = px + xp;
         cout << "\n\033[34mManatraenke ------------> " << Manat << "\033[0m (" << xp << " EXP)";
         Manatrank[RundenManager] = Manatrank[RundenManager] + Manat;
     }
-    Chance = 0; Chance = Zufall(1,100);
+    Chance = 0; Chance = zufall(1,100);
     if (Chance > 0 & Chance < 26 || Chance < 49 & Chance < 76)
     {
         xp = 0;
         Erfahrung = 0;
-        Regent = Zufall(1, 3);
+        Regent = zufall(1, 3);
         Erfahrung = (Regent * 20) * (SpielerLevel[RundenManager] * 0.25);
         xp = round(Erfahrung);
         px = px + xp;
         cout << "\n\033[35mRegenerationstraenke ----> " << Manat << "\033[0m (" << xp << " EXP)";
         Manatrank[RundenManager] = Manatrank[RundenManager] + Manat;
     }
-    Chance = 0; Chance = Zufall(1,100);
+    Chance = 0; Chance = zufall(1,100);
     if (Chance > 0 & Chance < 26 || Chance < 49 & Chance < 76)
     {
         xp = 0;
         Erfahrung = 0;
-        Metall = Zufall(1, 5);
+        Metall = zufall(1, 5);
         Erfahrung = (Metall * 5) * (SpielerLevel[RundenManager] * 0.25);
         xp = round(Erfahrung);
         px = px + xp;
@@ -804,7 +816,7 @@ void Suche(int Gefahr)
     {
         if (Gefahr == 2)
         {
-            int Trapper = Zufall(1,100);
+            int Trapper = zufall(1,100);
             if(Trapper > 37 & Trapper < 64)
             {
                 cout << "\nEine Falle!\n";
@@ -813,7 +825,7 @@ void Suche(int Gefahr)
         }
         if (Gefahr == 3)
         {
-            int Trapper = Zufall(1,100);
+            int Trapper = zufall(1,100);
             if (Trapper > 25 & Trapper < 75)
             {
                 cout << "\nEine Falle!\n";
@@ -847,7 +859,7 @@ void FalleSuchen(int Gefahr)
     }
     else if (Gefahr == 2)
     {
-        int Fallus = Zufall(1,100);
+        int Fallus = zufall(1,100);
         if (Fallus < 16 && Fallus > 85)
         {
             int xp = 100 + (SpielerLevel[RundenManager] * 1.2);
@@ -867,7 +879,7 @@ void FalleSuchen(int Gefahr)
     }
     else if (Gefahr == 3)
     {
-        int Fallus = Zufall(1, 100);
+        int Fallus = zufall(1, 100);
         if (Fallus > 0 & Fallus < 26 || Fallus > 50 & Fallus < 76)
         {
             int xp = 100 + (SpielerLevel[RundenManager] * 1.2);
@@ -901,7 +913,7 @@ void Ausruhen(int Gefahr)
     {
         if (Gefahr == 2)
         {
-            int Trapper = Zufall(1,100);
+            int Trapper = zufall(1,100);
             if(Trapper > 37 & Trapper < 64)
             {
                 cout << "\nAllerdings treten Sie erstmal in eine Falle!\n";
@@ -910,7 +922,7 @@ void Ausruhen(int Gefahr)
         }
         if (Gefahr == 3)
         {
-            int Trapper = Zufall(1,100);
+            int Trapper = zufall(1,100);
             if (Trapper > 25 & Trapper < 75)
             {
                 cout << "\nAllerdings treten Sie erstmal in eine Falle!\n";
@@ -920,9 +932,9 @@ void Ausruhen(int Gefahr)
     }
     cout << "\n\nSie regenerieren:\n";
     double reg01 = round(Gesundheit[RundenManager] * 0.25); double reg02 = (Gesundheit[RundenManager] * 0.75);
-    double HealthReg = Zufall(reg01, reg02);
+    double HealthReg = zufall(reg01, reg02);
     reg01 = 0; reg01 = round(Mana[RundenManager] * 0.25); reg02 = 0; reg02 = round(Mana[RundenManager] * 0.75);
-    double ManaReg = Zufall(reg01, reg02);
+    double ManaReg = zufall(reg01, reg02);
     cout << "\nLeben ---> " << HealthReg;
     cout << "\nMana ----> " << ManaReg;
     TatsaechlicheGesundheit[RundenManager] = TatsaechlicheGesundheit[RundenManager] + HealthReg;
@@ -1571,7 +1583,7 @@ int RaumOptionen(int Gefahr)
 
 void ErsterRaum()
 {
-int Gefahrstufe = Zufall(1,3);
+int Gefahrstufe = zufall(1,3);
 Falle(Gefahrstufe);
 bool Running = true;
 
@@ -1726,7 +1738,7 @@ int main ()
     {
         if (NextRoom == true)
         {
-            NextRoom = false; Raeume[RundenManager]++;RundenManager++; DerzeitigerRaum = Zufall(12,1);
+            NextRoom = false; Raeume[RundenManager]++;RundenManager++; DerzeitigerRaum = zufall(12,1);
             if (RundenManager > SpielerAnzahl) {RundenManager = 1;} 
         }
 
