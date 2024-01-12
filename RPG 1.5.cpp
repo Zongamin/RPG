@@ -115,7 +115,7 @@ void zuweisung()
 
 // Funktion Press any key
 
-void GetKey() 
+void getKey() 
 {
     char key;
     cout << "\n\n<<<< Press any key >>>>";
@@ -157,7 +157,7 @@ bool Bool()
     if (key == 'j') {bool Auswahl = true; return Auswahl;} else if (key == 'n') {bool Auswahl = false; return Auswahl;}
 
     cout << "Falsche Eingabe!";
-    GetKey();
+    getKey();
     break;
     }
 }
@@ -177,7 +177,7 @@ int LoadGame()
     cout << "                                                         /\\____/                            \n";
     cout << "                                                         \\_/__/                             \033[0m \n";
     cout << "\n---------------------------------------------------------------------------------------------------------------\n\n";
-    GetKey();
+    getKey();
     return 0;
 }
 
@@ -204,7 +204,7 @@ cout << "#::::::::::::::::::::#  #::::#    #::::# #:::::::::::::::::# #::::::::#
 cout << "#::::::::::::::::::::#  #::::#    #::::#  #:::::::::###::::#  ##:::::::::::::#    \n";  
 cout << "######################  ######    ######   #########   #####    ##############    \n";
 cout << "\n\nHaben Sie noch einen schoenen Tag :) \n";
-GetKey();
+getKey();
 exit(0);  
 }
 // Funktion Hauptmenue
@@ -251,7 +251,7 @@ void Hauptmenue()
             cout << "\n\nBitte geben Sie die Anzahl der Spieler ein (1 - 4) :\n";
             cin >> SpielerAnzahl;
             if (SpielerAnzahl > 0 && SpielerAnzahl < 5) {cout << "\n\nDie Spieleranzahl wurde auf " << SpielerAnzahl << " geaendert.";}
-            GetKey();
+            getKey();
             break;
 
         case 3:
@@ -276,7 +276,7 @@ void Hauptmenue()
 
         default:
             cout << "\033[31mUngueltige Eingabe!\033[0m";
-            GetKey();
+            getKey();
             break;
         }
     }
@@ -358,28 +358,28 @@ void Charakter()
             switch (Ergebnis)
             {
             case 1:
-                if (SkillPunkte[RundenManager] > 0) {Staerke[RundenManager]++; SkillPunkte[RundenManager]--; Vstaerke++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; GetKey();} break;
+                if (SkillPunkte[RundenManager] > 0) {Staerke[RundenManager]++; SkillPunkte[RundenManager]--; Vstaerke++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; getKey();} break;
     
             case 2:
-                if (SkillPunkte[RundenManager] > 0) {Intelligenz[RundenManager]++; SkillPunkte[RundenManager]--; Vintelligenz++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; GetKey();} break;
+                if (SkillPunkte[RundenManager] > 0) {Intelligenz[RundenManager]++; SkillPunkte[RundenManager]--; Vintelligenz++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; getKey();} break;
 
             case 3:
-                if (SkillPunkte[RundenManager] > 0) {Ausdauer[RundenManager]++; SkillPunkte[RundenManager]--; Vausdauer++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; GetKey();} break;
+                if (SkillPunkte[RundenManager] > 0) {Ausdauer[RundenManager]++; SkillPunkte[RundenManager]--; Vausdauer++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; getKey();} break;
     
             case 4:
-                if (SkillPunkte[RundenManager] > 0) {Geschick[RundenManager]++; SkillPunkte[RundenManager]--; Vgeschick++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; GetKey();} break;
+                if (SkillPunkte[RundenManager] > 0) {Geschick[RundenManager]++; SkillPunkte[RundenManager]--; Vgeschick++; break;} else {cout << "\n\nZu wenig Skillpunkte!"; getKey();} break;
 
             case 5:
-                if (Vstaerke > 0) {Vstaerke--; SkillPunkte[RundenManager]++; Staerke[RundenManager]--; break;} else {cout << "\n\n Es wurden noch keine Skillpunkte auf Staerke verteilt!"; GetKey();} break;
+                if (Vstaerke > 0) {Vstaerke--; SkillPunkte[RundenManager]++; Staerke[RundenManager]--; break;} else {cout << "\n\n Es wurden noch keine Skillpunkte auf Staerke verteilt!"; getKey();} break;
 
             case 6:
-                if (Vintelligenz > 0) {Vintelligenz--; SkillPunkte[RundenManager]++; Intelligenz[RundenManager]--; break;} else {cout << "\n\nEs wurden noch keine Skillpunkte auf Intelligenz verteilt!"; GetKey();} break;
+                if (Vintelligenz > 0) {Vintelligenz--; SkillPunkte[RundenManager]++; Intelligenz[RundenManager]--; break;} else {cout << "\n\nEs wurden noch keine Skillpunkte auf Intelligenz verteilt!"; getKey();} break;
 
             case 7:
-                if (Vausdauer > 0) {Vausdauer--; SkillPunkte[RundenManager]++; Ausdauer[RundenManager]--; break;} else {cout << "\n\nEs wurden noch keine Skillpunkte auf Ausdauer verteilt!"; GetKey();} break;
+                if (Vausdauer > 0) {Vausdauer--; SkillPunkte[RundenManager]++; Ausdauer[RundenManager]--; break;} else {cout << "\n\nEs wurden noch keine Skillpunkte auf Ausdauer verteilt!"; getKey();} break;
 
             case 8:
-                if (Vgeschick > 0) {Vgeschick--; SkillPunkte[RundenManager]++; Geschick[RundenManager]--; break;} else {cout << "\n\nEs wurden noch keine Skillpunkte auf Geschick verteilt!"; GetKey();} break;
+                if (Vgeschick > 0) {Vgeschick--; SkillPunkte[RundenManager]++; Geschick[RundenManager]--; break;} else {cout << "\n\nEs wurden noch keine Skillpunkte auf Geschick verteilt!"; getKey();} break;
     
             case 9:
                 cout << "\n\nSind Ihre Aenderungen korrekt (J/N) ?\n";
@@ -389,13 +389,13 @@ void Charakter()
 
             default:
                 cout << "Das geht nicht!";
-                GetKey();       
+                getKey();       
                 break;
             }
         }
         else
         {
-        GetKey();
+        getKey();
         Running = false;
         break;
         }   
@@ -536,7 +536,7 @@ void StufenAufstieg()
     cout << SpielerName[RundenManager] << " ist jetzt Level : " << SpielerLevel[RundenManager];
     cout << "\n\nSkillpunkte sind um 5 gestiegen!";
     
-    GetKey();
+    getKey();
     return;
 }
 
@@ -583,7 +583,7 @@ void ExpUp()
             Sleep(10);
             cout << "\033[0m";
             }
-            GetKey();
+            getKey();
             Exp[RundenManager] = Exp[RundenManager] - LevelExp[RundenManager];
             StufenAufstieg();
             break;
@@ -601,7 +601,7 @@ void ExpUp()
             break;
         }
     }
-    GetKey();
+    getKey();
     return;
 }
 
@@ -632,7 +632,7 @@ void TrapTap()
         
     if (TatsaechlicheGesundheit[RundenManager] < 1)
     {
-        GetKey();
+        getKey();
         Tod();
     }
     return;
@@ -791,12 +791,12 @@ void Find()
     if (px < 1)
     {
         cout << "\n\nNichts!";
-        GetKey();
+        getKey();
         return;
     }
     cout << "\nGesamt EXP ---------> " << px << " (EXP)";
     Exp[RundenManager] = Exp[RundenManager] + px;
-    GetKey();
+    getKey();
     ExpUp();
     return;
 
@@ -848,13 +848,13 @@ void FalleSuchen(int Gefahr)
     if (Gefahr == 1)
     {
         cout << "\n\nDa die Gegend sicher ist, gibt es auch keine Fallen....\n";
-        GetKey();
+        getKey();
         return;
     }
     if (Gefahr > 1 && Trap[RundenManager] < 1)
     {
         cout << "\n\nEs gibt keine Fallen....\n";
-        GetKey();
+        getKey();
         return;
     }
     else if (Gefahr == 2)
@@ -865,7 +865,7 @@ void FalleSuchen(int Gefahr)
             int xp = 100 + (SpielerLevel[RundenManager] * 1.2);
             cout << "\n\nSie heben eine Falle gefunden und sie entschaerft. " << xp << " EXP.";
             Exp[RundenManager] = Exp[RundenManager] + xp;
-            GetKey();
+            getKey();
             ExpUp();
             Trap[RundenManager] = 0;
             return;
@@ -873,7 +873,7 @@ void FalleSuchen(int Gefahr)
         else
         {
             cout << "\n\nSie konnten leider nichts finden, was nicht bedeutet, dass es keine Fallen gibt!\n";
-            GetKey();
+            getKey();
             return;
         }
     }
@@ -885,7 +885,7 @@ void FalleSuchen(int Gefahr)
             int xp = 100 + (SpielerLevel[RundenManager] * 1.2);
             cout << "\n\nSie haben eine Falle gefunden und sie entschaerft. " << xp << " EXP.";
             Exp[RundenManager] = Exp[RundenManager] + xp;
-            GetKey();
+            getKey();
             ExpUp();
             Trap[RundenManager] = 0;
             return;
@@ -893,7 +893,7 @@ void FalleSuchen(int Gefahr)
         else
         {
             cout << "\n\nSie konnten leider nichts finden, was nicht bedeutet, dass es keine Fallen gibt!\n";
-            GetKey();
+            getKey();
             return;
         }
     }
@@ -940,7 +940,7 @@ void Ausruhen(int Gefahr)
     TatsaechlicheGesundheit[RundenManager] = TatsaechlicheGesundheit[RundenManager] + HealthReg;
     if (TatsaechlicheGesundheit[RundenManager] > Gesundheit[RundenManager]) {TatsaechlicheGesundheit[RundenManager] = Gesundheit[RundenManager];}
     ShowLife();
-    GetKey();
+    getKey();
     return;
 }
 
@@ -963,8 +963,8 @@ void InventarText()
 
 void Heal()
 {
-    if (Heiltrank[RundenManager] < 1) {cout << "\nSie haben leider keine Heiltraenke mehr!\n"; GetKey(); return;}
-            else if (TatsaechlicheGesundheit[RundenManager] == Gesundheit[RundenManager]) {cout << "\nSie haben bereits volle Gesundheit!\n"; GetKey(); return;}
+    if (Heiltrank[RundenManager] < 1) {cout << "\nSie haben leider keine Heiltraenke mehr!\n"; getKey(); return;}
+            else if (TatsaechlicheGesundheit[RundenManager] == Gesundheit[RundenManager]) {cout << "\nSie haben bereits volle Gesundheit!\n"; getKey(); return;}
             else 
             {
                 Heiltrank[RundenManager] = Heiltrank[RundenManager] - 1;
@@ -972,7 +972,7 @@ void Heal()
                 if (TatsaechlicheGesundheit[RundenManager] > Gesundheit[RundenManager]) {TatsaechlicheGesundheit[RundenManager] = Gesundheit[RundenManager];}
                 cout << "\nSie haben einen Heiltrank verbraucht.\n";
                 cout << "Heilungsfaktor : " << round(Gesundheit[RundenManager] * 0.25) << " HP.\n";
-                GetKey();
+                getKey();
                 return;
             }
 }
@@ -981,8 +981,8 @@ void Heal()
 
 void Man()
 {
-    if (Manatrank[RundenManager] < 1) {cout << "\nSie haben leider keine Manatraenke mehr!\n"; GetKey(); return;}
-            else if (TatsaechlichesMana[RundenManager] == Mana[RundenManager]) {cout << "\nSie haben bereits volles Mana!\n"; GetKey(); return;}
+    if (Manatrank[RundenManager] < 1) {cout << "\nSie haben leider keine Manatraenke mehr!\n"; getKey(); return;}
+            else if (TatsaechlichesMana[RundenManager] == Mana[RundenManager]) {cout << "\nSie haben bereits volles Mana!\n"; getKey(); return;}
             else 
             {
                 Manatrank[RundenManager] = Manatrank[RundenManager] - 1;
@@ -990,7 +990,7 @@ void Man()
                 if (TatsaechlichesMana[RundenManager] > Mana[RundenManager]) {TatsaechlichesMana[RundenManager] = Mana[RundenManager];}
                 cout << "\nSie haben einen Manatrank verbraucht.\n";
                 cout << "Regenerationssfaktor : " << round(Mana[RundenManager] * 0.25) << " HP.\n";
-                GetKey();
+                getKey();
                 return;
             }
 }
@@ -999,8 +999,8 @@ void Man()
 
 void Regen()
 {
-    if (RegenTrank[RundenManager] < 1) {cout << "\nSie haben leider keine Regenerationstraenke mehr!\n"; GetKey(); return;}
-            else if (TatsaechlicheGesundheit[RundenManager] == Gesundheit[RundenManager] && TatsaechlichesMana[RundenManager] == Mana[RundenManager]) {cout << "\nSie haben bereits volle Gesundheit und Energie!\n"; GetKey(); return;}
+    if (RegenTrank[RundenManager] < 1) {cout << "\nSie haben leider keine Regenerationstraenke mehr!\n"; getKey(); return;}
+            else if (TatsaechlicheGesundheit[RundenManager] == Gesundheit[RundenManager] && TatsaechlichesMana[RundenManager] == Mana[RundenManager]) {cout << "\nSie haben bereits volle Gesundheit und Energie!\n"; getKey(); return;}
             else 
             {
                 RegenTrank[RundenManager] = RegenTrank[RundenManager] - 1;
@@ -1010,7 +1010,7 @@ void Regen()
                 if (TatsaechlichesMana[RundenManager] > Mana[RundenManager]) {TatsaechlichesMana[RundenManager] = Mana[RundenManager];}
                 cout << "\nSie haben einen Regenerationstrank verbraucht.\n";
                 cout << "Regenerationsfaktor : " << round(Gesundheit[RundenManager] * 0.15) << " HP / " << round(Mana[RundenManager] * 0.15) << "MP.";
-                GetKey();
+                getKey();
                 return;
             }
 }
@@ -1086,7 +1086,7 @@ void InvPoition(int Poition)
         
         default :
             cout << "\nDas geht nicht!\n";
-            GetKey();
+            getKey();
             break;
     }
 
@@ -1138,7 +1138,7 @@ void Inventar()
             
             default :
                 cout << "\nDas geht nicht!\n";
-                GetKey();
+                getKey();
                 break;
         }
     }
@@ -1187,7 +1187,7 @@ void Magie()
     switch(Ergebnis)
     {
         case 1:
-            if (Intelligenz[RundenManager] > 4) {cout << "\n\nIhr durchschnittlicher Feuerball - Schaden : " << Intelligenz[RundenManager] * 5 << " DMG\n"; GetKey(); break;}
+            if (Intelligenz[RundenManager] > 4) {cout << "\n\nIhr durchschnittlicher Feuerball - Schaden : " << Intelligenz[RundenManager] * 5 << " DMG\n"; getKey(); break;}
 
         case 2:
             if (Intelligenz[RundenManager] > 9 && TatsaechlichesMana[RundenManager] > 10) 
@@ -1197,7 +1197,7 @@ void Magie()
                 TatsaechlicheGesundheit[RundenManager] = TatsaechlicheGesundheit[RundenManager] + Heal;
                 TatsaechlichesMana[RundenManager] = TatsaechlichesMana[RundenManager] - 10;
                 if (TatsaechlicheGesundheit[RundenManager] > Gesundheit[RundenManager]) {TatsaechlicheGesundheit[RundenManager] = Gesundheit[RundenManager];}
-                GetKey();
+                getKey();
                 break;
             }
         
@@ -1217,11 +1217,11 @@ void Magie()
                     RegenOn[RundenManager] = RegenOn[RundenManager] + 5;
                     double Genesung = RegenRound(); 
                     cout << "\n\nSie sprechen Regeneration aus und heilen direkt " << Genesung << " Hitpoints.\nNoch " << RegenOn[RundenManager] << " Heilungen uebrig.";
-                    GetKey();
+                    getKey();
                     break;
                 }
                 cout << "\n\nSie haben nicht genuegend Mana!\n";
-                GetKey();
+                getKey();
                 break;
             }
         
@@ -1234,11 +1234,11 @@ void Magie()
                     Faura[RundenManager] = Faura[RundenManager] + 5;
                     cout << "\n\nSie zaubern eine Feuer Aura auf sich.\n";
                     cout << "Verbleibende Auren: " << Faura[RundenManager];
-                    GetKey();
+                    getKey();
                     break; 
                 }
                 cout << "\n\nSie haben nicht genug Mana!\n";
-                GetKey();
+                getKey();
                 break;
             }
         
@@ -1251,11 +1251,11 @@ void Magie()
                     double Goldie = round(Intelligenz[RundenManager] * 7.5);
                     cout << "\n\nSie zaubern Goldsog.\nSie erhalten " << Goldie << " Gold.";
                     Gold[RundenManager] = Gold[RundenManager] + Goldie;
-                    GetKey();
+                    getKey();
                     break;
                 }
                 cout << "\n\nSie haben nicht genug Mana!\n";
-                GetKey();
+                getKey();
                 break;
             }
         
@@ -1265,7 +1265,7 @@ void Magie()
 
         default: 
             cout << "\nDas ist nicht moeglich.\n";
-            GetKey();
+            getKey();
             break;
     }
     }
@@ -1351,7 +1351,7 @@ void SpielStand(int Choice)
                         datei.close();
                     }
     cout << "\n\nDatei wurde gespeichert.";
-    GetKey();
+    getKey();
     return;
 
 }
@@ -1376,12 +1376,12 @@ void Save(int Choice)
                 {
                    SpielStand(Choice);                  
                    cout << "\n\nDie Datei wurde überschrieben!";
-                   GetKey();
+                   getKey();
                 }
                 else
                 {
                    cerr << "\n\nFehler beim Oeffnen der Datei!";
-                   GetKey();
+                   getKey();
                 }
             }
             else
@@ -1393,12 +1393,12 @@ void Save(int Choice)
                 {
                     SpielStand(Choice);
                     cout << "\n\nDie Datei wurde erstellt!";
-                    GetKey();
+                    getKey();
                 }
                 else
                 {
                     cerr << "\n\nFehler beim oeffnen der Datei!";
-                    GetKey();
+                    getKey();
                 }
             }
     return;
@@ -1450,7 +1450,7 @@ void SaveGame()
 
         default :
             cout << "Das geht nicht!\n\n";
-            GetKey();
+            getKey();
             break;
     }
     return;
@@ -1559,7 +1559,7 @@ void SpielMenue()
             
             default:
                 cout << "\n\nDas geht nicht!";
-                GetKey();
+                getKey();
                 break;
         }
     return;
@@ -1618,13 +1618,13 @@ while (Running)
             if (Schluessel[RundenManager] < 1) 
             {
                 cout << "Die Tuer ist verschlossen und Sie haben leider keinen Schluessel!\n (Tipp: Umgebung absuchen)";
-                GetKey();
+                getKey();
                 break;
             }
             else
             {
                 cout << "Sie oeffnen die legendaere Tuer mit dem gefunden Schluessel und treten ein....\nHerzlich willkommen im endlosen Dungeon, " << SpielerName[RundenManager] << "!";
-                GetKey();
+                getKey();
                 Running = false;
                 break;
             }
@@ -1658,7 +1658,7 @@ while (Running)
 
         default:
             cout << "Das geht nicht!";
-            GetKey();
+            getKey();
             break;
     }
 
@@ -1672,7 +1672,7 @@ int main ()
 {
     ClrScr();
     cout << "Start\n";
-    GetKey();
+    getKey();
     ClrScr();
 
     cout << "\033[33mThe Big Random\n\n";
@@ -1708,7 +1708,7 @@ int main ()
     cout << "\t| |_\\ \\| (_| || | | | | ||  __/\\__ \\ \n";
     cout << "\t\\_____/ \\__,_||_| |_| |_| \\___||___/\033[0m\n";
     
-    GetKey();       
+    getKey();       
     zuweisung();
     Hauptmenue();
     bool Running = true;
