@@ -125,7 +125,7 @@ void getKey()
 
 // Funktion Bilschirm leeren
 
-void ClrScr() 
+void clrScr() 
 {
     system("cls");
     return;
@@ -166,7 +166,7 @@ bool Bool()
 
 int LoadGame()
 {   
-    ClrScr();
+    clrScr();
     cout << "\033[94m __                            __                                                            \n";
     cout << "/\\ \\                          /\\ \\    __                                                \n";
     cout << "\\ \\ \\        ___      __      \\_\\ \\  /\\_\\     ___       __                          \n";
@@ -185,7 +185,7 @@ int LoadGame()
 
 void SpielEnde()
 {
-ClrScr();
+clrScr();
 cout << "                                                    ######## \n";                    
 cout << "######################                              #::::::# \n";                    
 cout << "#::::::::::::::::::::#                              #::::::# \n";                    
@@ -216,7 +216,7 @@ void Hauptmenue()
 
     while(!Ausgang)
     {
-        ClrScr();
+        clrScr();
         cout << "\033[94m __  __                                  __                                                                                            \n";                                                 
         cout << "/\\ \\/\\ \\                                /\\ \\__                                                                                           \n";                                                 
         cout << "\\ \\ \\_\\ \\      __      __  __   _____   \\ \\ ,_\\    ___ ___       __     ___     __  __     __                                          \n";   
@@ -313,7 +313,7 @@ void Charakter()
         Glueck[RundenManager] = (Ausdauer[RundenManager] * 0.01) + (Geschick[RundenManager] * 0.1);
         Tragekapazitaet[RundenManager] = (Staerke[RundenManager] * 15) + (Ausdauer[RundenManager] * 5);
 
-        ClrScr();
+        clrScr();
         cout << "\033[36m _____     __                                   __        __ \n";                     
         cout << "/\\  _ `\\  /\\ \\                                 /\\ \\      /\\ \\__ \n";                  
         cout << "\\ \\ \\/\\_\\ \\ \\ \\___       __      _ __     __   \\ \\ \\/'\\  \\ \\ ,_\\     __    _ __  \n";  
@@ -459,7 +459,7 @@ void Farbe (int Color)
 
 void Tod()
 {
-ClrScr();
+clrScr();
 
 cout << "              ####                     \n";
 cout << "            ########                   --------------------------------------------------------------\n";
@@ -517,7 +517,7 @@ if (Check == false)
 
 void StufenAufstieg()
 {
-    ClrScr();
+    clrScr();
     
     SpielerLevel[RundenManager]++; 
     SkillPunkte[RundenManager] = SkillPunkte[RundenManager] + 5;
@@ -550,7 +550,7 @@ void ExpUp()
     while(Running)
     {
     
-    ClrScr();
+    clrScr();
     cout << "\033[36m ____     __   __    ____           __  __                                 \n";             
     cout << "/\\  _`\\  /\\ \\ /\\ \\  /\\  _`\\        /\\ \\/\\ \\                            \n";           
     cout << "\\ \\ \\__  \\ `\\`\\/'/' \\ \\ \\L\\ \\      \\ \\ \\ \\ \\    _____              \n";  
@@ -676,7 +676,7 @@ void ImpBild()
 
 void Kampf()
 {
-    ClrScr();
+    clrScr();
     cout << "\033[36m __  __                                        ___          \n";  
     cout << "/\\ \\/\\ \\                                     /'___\\            \n"; 
     cout << "\\ \\ \\/'/'      __       ___ ___     _____   /\\ \\__/            \n";
@@ -806,7 +806,7 @@ void Find()
 
 void Suche(int Gefahr)
 {
-    ClrScr();
+    clrScr();
     Farbe(Gefahr);
 
     cout << "Sie begeben sich auf die Suche";
@@ -903,7 +903,7 @@ void FalleSuchen(int Gefahr)
 
 void Ausruhen(int Gefahr)
 {
-    ClrScr();
+    clrScr();
     Farbe(Gefahr);
 
     cout << "Sie versuchen sich auszuruhen";
@@ -948,7 +948,7 @@ void Ausruhen(int Gefahr)
 
 void InventarText()
 {
-    ClrScr();
+    clrScr();
     cout << "\033[36m ______                                       __                                            \n";   
     cout << "/\\__  _\\                                     /\\ \\__                                             \n";   
     cout << "\\/_/\\ \\/      ___     __  __     __     ___  \\ \\ ,_\\     __      _ __                         \n";  
@@ -1149,7 +1149,7 @@ void Inventar()
 
 void MageText()
 {
-    ClrScr();
+    clrScr();
     cout << "\033[36m /'\\_/`\\                      __                           \n";           
     cout << "/\\      \\      __        __  /\\_\\      __                        \n";
     cout << "\\ \\ \\__\\ \\   /'__`\\    /'_ `\\\\/\\ \\   /'__`\\               \n";
@@ -1412,7 +1412,7 @@ void SaveGame()
     
     while(Running)
     {
-    ClrScr();
+    clrScr();
     cout << "\033[36m ____                                          /n";
     cout << "/\\  _`\\                                              /n";
     cout << "\\ \\,\\L\\_\\      __      __  __     __              /n";
@@ -1465,7 +1465,7 @@ void Name()
 
     while(Running)
     {
-        ClrScr();
+        clrScr();
         cout << "\033[36m /'\\_/`\\                                        ";
         cout << "/\\      \\      __     ___     __  __     __     ";
         cout << "\\ \\ \\__\\ \\   /'__`\\ /' _ `\\  /\\ \\/\\ \\  /'__`\\   ";
@@ -1525,7 +1525,7 @@ void SpielMenue()
     
     while(Running)
     {
-        ClrScr();
+        clrScr();
         cout << "\033[36m /'\\_/`\\                                        ";
         cout << "/\\      \\      __     ___     __  __     __     ";
         cout << "\\ \\ \\__\\ \\   /'__`\\ /' _ `\\  /\\ \\/\\ \\  /'__`\\   ";
@@ -1589,7 +1589,7 @@ bool Running = true;
 
 while (Running)
 {
-    ClrScr();
+    clrScr();
     cout << "\033[0m_______________________________________________________                 \033[36mSpieler: " << SpielerName[RundenManager] << "        \033[0mRaum: " << Raeume[RundenManager] << "\n";
     cout << "|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n";
     cout << "|__|_____|_____|_____|_____|_____|_____|_____|_____|__|                 --------------------------------------------------------\n";
@@ -1670,10 +1670,10 @@ return;
 
 int main ()
 {
-    ClrScr();
+    clrScr();
     cout << "Start\n";
     getKey();
-    ClrScr();
+    clrScr();
 
     cout << "\033[33mThe Big Random\n\n";
     cout << "\033[36m #################    #################           ############       #######             ##################\n"; 
@@ -1742,7 +1742,7 @@ int main ()
             if (RundenManager > SpielerAnzahl) {RundenManager = 1;} 
         }
 
-        ClrScr();
+        clrScr();
 
     }
 }
