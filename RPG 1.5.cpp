@@ -145,9 +145,9 @@ int auswahl()
 
 }
 
-// Ja - Nein Abfrage
+// Wahr - Falsch Abfrage
 
-bool Bool()
+bool boolWert()
 {
     char key;
     
@@ -211,10 +211,10 @@ exit(0);
 
 void Hauptmenue()
 {
-    bool Ausgang = false;
+    bool Running = true;
     bool Korrekt = false; 
 
-    while(!Ausgang)
+    while(Running)
     {
         clrScr();
         cout << "\033[94m __  __                                  __                                                                                            \n";                                                 
@@ -243,8 +243,8 @@ void Hauptmenue()
             cout << "\n\nSpielername Spieler "<< i << " :" << SpielerName[i];            
             }
             cout << "\nSind Sie mit den Eingaben zufrieden (J/N) ?";
-            Korrekt = Bool();
-            if (Korrekt == true) {Ausgang = true; break;} else {break;}
+            Korrekt = boolWert();
+            if (Korrekt == true) {Running = false; break;} else {break;}
             break;
 
         case 2:
@@ -270,7 +270,7 @@ void Hauptmenue()
         case 5:
             
             cout << "\n\nSind Sie sicher, dass Sie das Spiel beenden moechten (J/N)?\n";
-            Korrekt = Bool();
+            Korrekt = boolWert();
 
             if (Korrekt == true) {SpielEnde();} else {break;}
 
@@ -383,7 +383,7 @@ void Charakter()
     
             case 9:
                 cout << "\n\nSind Ihre Aenderungen korrekt (J/N) ?\n";
-                check = Bool();
+                check = boolWert();
                 if (check == true){Running = false; Vstaerke = 0; Vintelligenz = 0; Vausdauer = 0; Vgeschick = 0;}
                 break;
 
@@ -502,7 +502,7 @@ SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord); cout << Monste
 coord.Y = 20;
 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord); cout << Bosse;
 
-bool Check = Bool();
+bool Check = boolWert();
 if (Check == true)
 {
     LoadGame();
@@ -1371,7 +1371,7 @@ void Save(int Choice)
             {
                 Pruefung.close();
                 cout << "\n\nDie Datei existiert bereits. Moechten Sie sie überschreiben? (J/N)";
-                bool Auswahl = Bool();
+                bool Auswahl = boolWert();
                 if (Auswahl == true) 
                 {
                    SpielStand(Choice);                  
@@ -1388,7 +1388,7 @@ void Save(int Choice)
             {
                 Pruefung.close();
                 cout << "\n\nDie Datei existiert nicht. Soll sie erstellt werden? (J/N)";
-                bool Auswahl = Bool();
+                bool Auswahl = boolWert();
                 if (Auswahl == true)
                 {
                     SpielStand(Choice);
@@ -1554,7 +1554,7 @@ void SpielMenue()
 
             case 4:
                 cout << "\n\nSind Sie sicher, dass Sie das Spiel beenden möchten (J/N)?\n";
-                Korrekt = Bool();
+                Korrekt = boolWert();
                 if (Korrekt == true) {SpielEnde();} else {break;}                
             
             default:
