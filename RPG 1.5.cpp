@@ -133,7 +133,7 @@ void clrScr()
 
 // Funktion Auswahl des Spielers
 
-int Auswahl()
+int auswahl()
 {
     char key;
     key = _getch(); 
@@ -233,7 +233,7 @@ void Hauptmenue()
         cout << "\033[107;30m[ 4 ]\033[0m ------> Spielstand laden\n\n";
         cout << "\033[41m[ 5 ]\033[0m ------> \033[31mSpiel beenden\n\n\033[0m";
         cout << "---------------------------------------------------------------------------------------------------------------\n\n";
-        int Ergebnis = Auswahl();
+        int Ergebnis = auswahl();
         switch (Ergebnis)
         {
         case 1:            
@@ -354,7 +354,7 @@ void Charakter()
             cout << " \033[30;102m* 4 *\033[0m ------> \033[32mGeschick (+)\033[0m                             \033[41;97m* 8 *\033[0m ------> \033[32mGeschick (-)\033[0m \n\n";
             cout << " \033[30;47m* 9 *\033[0m ------> Fertig\n";
     
-            int Ergebnis = Auswahl();
+            int Ergebnis = auswahl();
             switch (Ergebnis)
             {
             case 1:
@@ -1073,7 +1073,7 @@ void InvPoition(int Poition)
     else if (Poition == 2) {cout << "\n\n[ 1 ] -------> Manatrank verwenden                 [ 2 ] ------> Zurueck";}
     else if (Poition == 3) {cout << "\n\n[ 1 ] -------> Regenerationstrank verwenden        [ 2 ] ------> Zurueck";}
     ShowLife();
-    int Ergebnis = Auswahl();
+    int Ergebnis = auswahl();
     switch(Ergebnis)
     {
         case 1:
@@ -1109,7 +1109,7 @@ void Inventar()
         cout << "\n\n\033[41m[ 1 ]\033[0m ------> \033[31mHeiltraenke\033[0m                   \033[43;30m[ 4 ]\033[0m ------> \033[33mRuestung\n\n\033[0m";
         cout << "\033[44m[ 2 ]\033[0m ------> \033[34mManatraenke\033[0m                   \033[103;30m[ 5 ]\033[0m ------> \033[93mWaffen\n\n\033[0m";
         cout << "\033[45m[ 3 ]\033[0m ------> \033[35mRegenerationstraenke\033[0m          \033[107;30m[ 6 ]\033[0m ------> Fertig\n\n\033[0m";
-        int Ergebnis = Auswahl();
+        int Ergebnis = auswahl();
         switch(Ergebnis)
         {
             case 1:
