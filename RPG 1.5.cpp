@@ -1183,7 +1183,7 @@ void Magie()
     if (Intelligenz[RundenManager] > 29) {coord.X = 40; coord.Y = 19; SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord); cout << "\033[103m[ 6 ]\033[0m ------> \033[93mGoldsog\033[36m (25 Mana) \033[0m";}
     coord.X = 0; coord.Y = 21; SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord); cout << "\033[107;30m[ 7 ]\033[0m ------> Zurueck";
     ShowLife();
-    int Ergebnis = Auswahl();
+    int Ergebnis = auswahl();
     switch(Ergebnis)
     {
         case 1:
@@ -1429,7 +1429,7 @@ void SaveGame()
     cout << "---------------------------------------------------------------------------------------------------------------\n\n";
     cout << "[ 4 ] ------> Zurueck";
 
-    int Ergebnis = Auswahl();
+    int Ergebnis = auswahl();
     switch (Ergebnis)
     {
         case 1:
@@ -1479,7 +1479,7 @@ void Name()
         if (SpielerAnzahl > 3) {cout << "[ 4 ] ------> " << SpielerName[4] << "\n\n";}
         cout << "[ 5 ] ------> Zurueck\n\n";
         cout << "Welcher Name soll geaendert werden ?";
-        int Ergebnis = Auswahl();
+        int Ergebnis = auswahl();
         switch(Ergebnis)
         {
             case 1:
@@ -1537,7 +1537,7 @@ void SpielMenue()
         cout << "[ 2 ] ------> Spielerame aendern\n\n";
         cout << "[ 3 ] ------> Zurueck zum Spiel\n\n";
         cout << "[ 4 ] ------> Spiel beenden";
-        int Ergebnis = Auswahl();
+        int Ergebnis = auswahl();
         switch(Ergebnis)
         {
             case 1:
@@ -1575,7 +1575,7 @@ int RaumOptionen(int Gefahr)
     SchalterFarbe(Gefahr); cout << "[ 3 ]\033[0m ------> "; Farbe(Gefahr); cout << "Nach Fallen suchen      \033[0m                \033[30;104m[ 7 ]\033[0m ------> \033[94mMagie \033[0m \n\n";
     SchalterFarbe(Gefahr); cout << "[ 4 ]\033[0m ------> "; Farbe(Gefahr); cout << "Ausruhen                \033[0m                \033[30;47m[ 8 ]\033[0m ------> Menue \n\n";
 
-    int Ergebnis = Auswahl();
+    int Ergebnis = auswahl();
     return Ergebnis;
 }
 
